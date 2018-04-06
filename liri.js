@@ -9,15 +9,15 @@ var client = new Twitter(keys.twitter);
 let [node, path, command, value] = process.argv;
 
 // if spotify-that-song, run function to call spotify api
-if (command === 'my-tweets') {
-    getTweets();
-} else if(command === 'spotify-this-song') {
-    getSongInfo();
-} else if (command === 'movie-this') {
-    getMovieInfo();
-} else if (command === 'do-what-it-says') {
-    doIt();
-}
+// if (command === 'my-tweets') {
+//     getTweets();
+// } else if(command === 'spotify-this-song') {
+//     getSongInfo();
+// } else if (command === 'movie-this') {
+//     getMovieInfo();
+// } else if (command === 'do-what-it-says') {
+//     doIt();
+// }
 function getTweets() {
     var params = {screen_name: 'sonsofcodearchy'};
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -30,6 +30,9 @@ function getTweets() {
             }
         }
     })
+}
+function getSongInfo(){
+    
 }
 let doIt = function() {
     fs.readFile('./random.txt', 'utf8', function(error, data) {
